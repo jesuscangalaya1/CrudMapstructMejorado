@@ -5,15 +5,16 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-public class CarDto {
+public class BrandCarDto {
 
     private Long id;
-    private String name;
-    private String matricula;
-    private String precio;
-    //private Long brandCarId;
+    private String description;
+    private List<Car2Dto> cars = new ArrayList<>();
 }

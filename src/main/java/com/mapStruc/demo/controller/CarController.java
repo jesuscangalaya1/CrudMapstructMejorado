@@ -20,17 +20,15 @@ public class CarController {
     private final CarService carService;
 
 
-    @GetMapping
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseDto<List<CarDto>> listCars(){
         return new ResponseDto<>("SUCCESS",
                 String.valueOf(HttpStatus.OK),
                 "CARS SUCCESSFULLY READED",
                 carService.listCar());
-
-        //return new ResponseEntity<>(carService.listCar(), HttpStatus.OK);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseDto<Optional<CarDto>> getCarById(@PathVariable Long id){
         return new ResponseDto<>("SUCCESS",
                 String.valueOf(HttpStatus.OK),

@@ -54,8 +54,6 @@ public class CarService {
         throw new ResourceNotFoundException("El carro con id " + id + " no se encontró en la base de datos.");
     }
 
-
-
     public void deleteCar(Long id){
         if (!carRepository.existsById(id)) {
             throw new BusinessException("P-404",HttpStatus.NOT_FOUND,"El Id del Carro no existe");

@@ -1,18 +1,16 @@
 package com.mapStruc.demo.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter @Setter
+@Data
 @Entity
-public class Car {
+public class Car2 implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,8 +19,8 @@ public class Car {
     private String matricula;
     private String precio;
 
-/*    @JsonBackReference
+    @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "brandCar_id",nullable = false)
-    private BrandCar brandCar;*/
+    private BrandCar brandCar;
 }
